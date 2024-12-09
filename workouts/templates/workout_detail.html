@@ -1,0 +1,18 @@
+<h1>Тренировка {{ workout.date }}</h1>
+<p>{{ workout.notes }}</p>
+<a href="{% url 'add_exercise' workout.id %}">Добавить упражнение</a>
+
+<ul>
+    {% for exercise in exercises %}
+    <li>
+        <p>
+            <strong>{{ exercise.exercise.name }}</strong>: 
+            {{ exercise.sets }} sets x {{ exercise.reps }} reps ({{ exercise.weight }} кг)
+        </p>
+        <a href="{% url 'exercise_detail' workout.id exercise.id %}">
+            <button>Просмотреть</button>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'workout_list' %}">Назад к тренировкам</a>

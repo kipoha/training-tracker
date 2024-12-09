@@ -1,0 +1,9 @@
+<h1>Детали упражнения</h1>
+<p><strong>Тренировка:</strong> {{ workout.date }}</p>
+<p><strong>Упражнение:</strong> {{ exercise.exercise.name }}</p>
+<p><strong>Описание:</strong> {{ exercise.exercise.description }}</p>
+<p><strong>Подходы:</strong> {{ exercise.sets }}</p>
+<p><strong>Повторы:</strong> {{ exercise.reps }}</p>
+<p><strong>Вес:</strong> {{ exercise.weight }} кг</p>
+
+<a href="{% url 'workout_detail' workout.id %}">Вернуться к тренировке</a>

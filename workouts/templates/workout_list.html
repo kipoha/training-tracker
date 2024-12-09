@@ -1,0 +1,12 @@
+<h1>Тренировки</h1>
+<a href="{% url 'add_workout' %}">Добавить тренировку</a>
+<ul>
+    {% for workout in workouts %}
+    <li>
+        <a href="{% url 'workout_detail' workout.id %}">{{ workout.date }}</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_exercise' %}">Добавить упражнение</a>
+<a href="{% url 'progress_report' %}">Прогресс</a>
+
